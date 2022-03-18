@@ -1,0 +1,3 @@
+C5 replace O
+C2 replace N
+H25 delete
