@@ -43,6 +43,8 @@ def createFile(operationFile, coordinateFile, newFile):
         write(newFile, new_list, format = "cif")
     elif newFile.endswith("vasp"):
         write(newFile, new_list, format="vasp")
+    elif newFile.endswith("xyz"):
+        write(newFile, new_list, format="xyz")
 
     # delete atoms from the end of list, in case of delete wrong atoms
     # for delete_goal in range(len(operation)):
