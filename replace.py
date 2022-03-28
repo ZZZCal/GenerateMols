@@ -6,7 +6,7 @@ from ase.build import sort
 from ase.io import read,write
 
 
-def createFile(coordinateFile, operationFile, newFile):
+def createFile(operationFile, coordinateFile, newFile):
     slab = read(coordinateFile, format='cif')
     operation = []
     data = []
