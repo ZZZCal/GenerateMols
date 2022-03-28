@@ -39,7 +39,10 @@ def createFile(operationFile, coordinateFile, newFile):
     new_list = Atoms([i for i in slab if i.symbol != "Pr"])
     new_list.cell = slab.cell
     new_list.pbc = slab.pbc
-    write(newFile, new_list, format = "cif")
+    if newFile.endswith("cif"):
+        write(newFile, new_list, format = "cif")
+    elif newFile.endswith("vasp"):
+        write(newFile, new_list, format="vasp")
 
     # delete atoms from the end of list, in case of delete wrong atoms
     # for delete_goal in range(len(operation)):
