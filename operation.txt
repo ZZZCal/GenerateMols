@@ -1,3 +1,26 @@
-C1 replace B
-C2 replace N
-H4 delete
+C8 replace H
+C9 replace H
+C10 delete
+C7 delete
+H10 delete
+H7 delete
+C11 delete
+C12 delete
+C26 delete
+H26 delete
+C23 replace H
+C24 replace H
+C20 replace H
+C21 replace H
+C19 delete
+C22 delete
+H19 delete
+H22 delete
+C14 replace H
+C15 replace H
+C17 replace H
+C18 replace H
+C13 delete
+C16 delete
+H13 delete
+H16 delete
