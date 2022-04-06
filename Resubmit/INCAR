@@ -1,0 +1,44 @@
+Global Parameters
+  ISTART =  1            (Read existing wavefunction; if there)
+  ISPIN  =  2           (Spin polarised DFT)
+  # ICHARG =  1         (Non-self-consistent: GGA/LDA band structures)
+  LREAL  = Auto          (Projection operators: automatic)
+   ENCUT  =  520        (Cut-off energy for plane wave basis set, in eV)
+  PREC   =  Accurate       (Precision level)
+  LWAVE  = .TRUE.        (Write WAVECAR or not)
+  LCHARG = .TRUE.        (Write CHGCAR or not)
+  ADDGRID= .TRUE.        (Increase grid; helps GGA convergence)
+  # LVTOT  = .TRUE.      (Write total electrostatic potential into LOCPOT or not)
+  # LVHAR  = .TRUE.      (Write ionic + Hartree electrostatic potential into LOCPOT or not)
+  # NELECT =             (No. of electrons: charged cells; be careful)
+  # LPLANE = .TRUE.      (Real space distribution; supercells)
+    NPAR   = 8           (Max is no. nodes; don't set for hybrids)
+  # NWRITE = 2           (Medium-level output)
+  # KPAR   = 2           (Divides k-grid into separate groups)
+  # NGX    = 500         (FFT grid mesh density for nice charge/potential plots)
+  # NGY    = 500         (FFT grid mesh density for nice charge/potential plots)
+  # NGZ    = 500         (FFT grid mesh density for nice charge/potential plots)
+    ALGO = Normal  
+  #  LHFCALC  = .TRUE.
+  #  HFSCREEN = 0.2
+   NUPDOWN = 0
+   MAGMOM =98*1 98*0
+
+Electronic Relaxation
+  ISMEAR =  0          (Gaussian smearing; metals:1)
+  SIGMA  =  0.05         (Smearing value in eV; metals:0.2)
+  NELM   =  80           (Max electronic SCF steps)
+  NELMIN =  6            (Min electronic SCF steps)
+  EDIFF  =  1E-08        (SCF energy convergence; in eV)
+  #  GGA  =  PE           (PBEsol exchange-correlation)
+ 
+Ionic Relaxation
+  NSW    =  18          (Max ionic steps)
+  IBRION =  2            (Algorithm: 0-MD; 1-Quasi-New; 2-CG)
+  ISIF   =  2            (Stress/relaxation: 2-Ions, 3-Shape/Ions/V, 4-Shape/Ions)
+  EDIFFG = -2E-02        (Ionic convergence; eV/AA)
+  ISYM =  2            (Symmetry: 0=none; 2=GGA; 3=hybrids)
+ 
+DFT-D3 Correction
+  IVDW   =  12           (DFT-D3 method of method with no damping)
+
