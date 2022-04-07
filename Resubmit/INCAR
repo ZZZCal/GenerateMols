@@ -33,7 +33,7 @@ Electronic Relaxation
   #  GGA  =  PE           (PBEsol exchange-correlation)
  
 Ionic Relaxation
-  NSW    =  18          (Max ionic steps)
+  NSW    =  7          (Max ionic steps)
   IBRION =  2            (Algorithm: 0-MD; 1-Quasi-New; 2-CG)
   ISIF   =  2            (Stress/relaxation: 2-Ions, 3-Shape/Ions/V, 4-Shape/Ions)
   EDIFFG = -2E-02        (Ionic convergence; eV/AA)
@@ -41,4 +41,8 @@ Ionic Relaxation
  
 DFT-D3 Correction
   IVDW   =  12           (DFT-D3 method of method with no damping)
+
+
+
+
 

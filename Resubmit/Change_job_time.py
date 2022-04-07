@@ -1,14 +1,14 @@
 import sys
 
 
-def change_job_time(number1, number2):
+def change_job_time(hour, min):
     ns = ""
     with open("job.sh", 'r+') as f1:
         s = f1.read()
         s = s.split("\n")
         for idx,line in enumerate(s):
             if "time" in line:
-                line = line.replace(number1, number2)
+                line = "#SBATCH --time="+hour+":"+min+":00"
                 s[idx] = line
         for line in s:
             ns = ns+line+"\n"

@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --time=6:00:00
+#SBATCH --time=10:50:00
 #SBATCH --nodes=2
 #SBATCH --tasks-per-node=64
 #SBATCH --mem=255000M
@@ -10,6 +10,7 @@
 
 module load VASP
 srun vasp_std
+
 
 
 

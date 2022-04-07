@@ -1,14 +1,14 @@
 import sys
 
 
-def change_incar(number1, number2):
+def change_incar(number1):
     ns = ""
     with open("INCAR", 'r+') as f1:
         s = f1.read()
         s = s.split("\n")
         for idx,line in enumerate(s):
             if "NSW" in line:
-                line = line.replace(number1, number2)
+                line = "  NSW    =  "+number1+"          (Max ionic steps)"
                 s[idx] = line
         for line in s:
             ns = ns+line+"\n"
@@ -16,4 +16,4 @@ def change_incar(number1, number2):
         f2.write(ns)
 
 if __name__ == "__main__":
-    change_incar(sys.argv[1], sys.argv[2])
+    change_incar(sys.argv[1])
