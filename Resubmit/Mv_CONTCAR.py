@@ -8,6 +8,8 @@ def mv_contcar():
 
     with open("POSCAR", 'w') as f2:
         f2.write(file1)
+    if os.path.exists("CONTCAR"):
+        os.remove("CONTCAR")
 
 
 
@@ -21,8 +23,9 @@ if __name__ == "__main__":
             check = checkfile.read()
     if re.search("reached required accuracy", check):
         mv_contcar()
-    else:
         print(path)
+    else:
+        mv_contcar()
 
 
 
