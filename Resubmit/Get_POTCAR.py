@@ -11,7 +11,7 @@ def get_element():
 def write_POTCAR(ele):
     cwd = os.getcwd()
     potcar = ''
-    path_pot = "/Users/zhangzhenzhe/Desktop/Quasicrystal/mols/First-mole/Generazition/pseudopotentials/PBE"
+    path_pot = "path_to_potcar_file/pseudopotentials/PBE"
     folder = os.listdir(path_pot)
     for element in ele:
         for file in folder:
