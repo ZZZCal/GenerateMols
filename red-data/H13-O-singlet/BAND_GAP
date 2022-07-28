@@ -1,9 +1,9 @@
  +-------------------------- Summary ----------------------------+
             Spin Channel:     <UP>       <DOWN>         <TOTAL>
            Band Gap (eV):    0.0045      0.0045      0.0045
-  Eigenvalue of VBM (eV):   -0.0034     -0.0034     -0.0034
-  Eigenvalue of CBM (eV):    0.0011      0.0011      0.0011
-       Fermi Energy (eV):    0.0000      0.0000      0.0000
+  Eigenvalue of VBM (eV):   -2.8600     -2.8600     -2.8600
+  Eigenvalue of CBM (eV):   -2.8555     -2.8555     -2.8555
+       Fermi Energy (eV):   -2.8566     -2.8566     -2.8566
                HOMO Band:       336       336         336
                LUMO Band:       337       337         337
     Location of VBM (UP):    0.4444      0.0000      0.0000
