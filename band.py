@@ -100,8 +100,8 @@ def change_job_title(title):
     # x2, y2 = readfile10(np.loadtxt("PDOS_SUM_UP.dat"))
 
     ax1  = ax[0, 1]
-    ax1.plot(y1, x1, label = "Spin down", linewidth=1.0)
-    ax1.plot(y2, x1, label = "Spin up", linewidth=1.0)
+    ax1.plot(y1, x1, label = "Spin up", linewidth=1.0)
+    ax1.plot(y2, x1, label = "Spin down", linewidth=1.0)
     # plt.ylabel('Energy (eV)')
     # plt.xlabel('', rotation=0,fontsize=font['size']-2,fontname=font['family'])
     # plt.ylim(-6,0)
@@ -113,8 +113,8 @@ def change_job_title(title):
     ax1.get_yaxis().set_visible(False)
 
     ax2 = ax[1,1]
-    ax2.plot(y1, x1, label = "Spin down", linewidth=1.0)
-    ax2.plot(y2, x1, label = "Spin up", linewidth=1.0)
+    ax2.plot(y1, x1, label = "Spin up", linewidth=1.0)
+    ax2.plot(y2, x1, label = "Spin down", linewidth=1.0)
     # plt.ylabel('Energy (eV)')
     # plt.xlabel('', rotation=0,fontsize=font['size']-2,fontname=font['family'])
     # plt.ylim(-6,0)
