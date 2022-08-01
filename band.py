@@ -56,7 +56,8 @@ def change_job_title(title):
         axe.axvline(x=i, ymin=0, ymax=1,linestyle= '--',linewidth=0.5,color='0.5')
     colormaps='blue'
     axe.plot(datas[:,0],datas[:,1:],linewidth=1.0,color=colormaps)
-    axe.set_ylabel(r'$\mathrm{E} - \mathrm{E_f}$ (eV)',fontdict=font)
+  #  axe.set_ylabel(r'$\mathrm{E} - \mathrm{E_f}$ (eV)',fontdict=font)
+    axe.set_ylabel(r'$\mathrm{E}$ (eV)',fontdict=font)
     axe.set_xticks(xtick)
     axe.set_xticklabels(group_labels, rotation=0,fontsize=font['size']-2,fontname=font['family'])
     axe.set_xlim((xtick[0], xtick[-1]))
@@ -70,7 +71,8 @@ def change_job_title(title):
         axi.axvline(x=j, ymin=0, ymax=1,linestyle= '--',linewidth=0.5,color='0.5')
     colormaps='blue'
     axi.plot(data2[:,0],data2[:,1:],linewidth=1.0,color=colormaps)
-    axi.set_ylabel(r'$\mathrm{E} - \mathrm{E_f}$ (eV)',fontdict=font)
+ #   axi.set_ylabel(r'$\mathrm{E} - \mathrm{E_f}$ (eV)',fontdict=font)
+    axi.set_ylabel(r'$\mathrm{E}$ (eV)',fontdict=font)
     axi.set_xticks(xtick)
     axi.set_xticklabels(group_labels, rotation=0,fontsize=font['size']-2,fontname=font['family'])
     axi.set_xlim((xtick[0], xtick[-1]))
