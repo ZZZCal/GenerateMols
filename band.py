@@ -10,7 +10,75 @@ from matplotlib import pyplot as plt
 import matplotlib.ticker as ticker
 
 
-def change_job_title(title):
+def get_fermi():
+    # spin_up = []
+    # spin_down = []
+    spin_up_VB = []
+    spin_down_VB = []
+    data = []
+    # j = k = 0
+    # temp1 = temp2 = []
+    # up_average = down_average = []
+    with open("EIGENVAL", 'r') as fx:
+        for lines in fx:
+            line = re.split('\s+', lines)
+            line = [x for x in line if x != '']
+            data.append(line)
+    for i in range(len(data)):
+        if len(data[i]) == 5:
+            if float(data[i][3]) == 0:
+                if float(data[i - 1][3]) != 0:
+                    # j = i
+                    # while float(data[j - 1][3]) != 1:
+                    #     spin_up.append(data[j])
+                    #     temp1.append(float(data[j][1]))
+                    #     j -= 1
+                    # spin_up.append(data[j])
+                    # temp1.append(float(data[j][1]))
+                    # spin_up.append(data[j - 1])
+                    # temp1.append(float(data[j - 1][1]))
+                    # temp_number1=(sum(temp1) / len(temp1))
+                    # up_average.append(temp_number1)
+                    # temp1.clear()
+                    # spin_up_VB.append(float(data[j - 1][1]))
+                    spin_up_VB.append(float(data[i - 1][1]))
+            if float(data[i][4]) == 0:
+                if float(data[i - 1][4]) != 0:
+                    # k = i
+                    # while float(data[k - 1][4]) != 1:
+                    #     spin_down.append(data[k])
+                    #     temp2.append(float(data[k][2]))
+                    #     k -= 1
+                    # spin_down.append(data[k])
+                    # temp2.append(float(data[k][2]))
+                    # spin_down.append(data[k - 1])
+                    # temp2.append(float(data[k - 1][2]))
+                    # temp_number2 = (sum(temp2) / len(temp2))
+                    # down_average.append(temp_number2)
+                    # temp2.clear()
+                    # spin_down_VB.append(float(data[k - 1][2]))
+                    spin_down_VB.append(float(data[i - 1][2]))
+
+
+    # del up_average[1::2]
+    # del down_average[1::2]
+
+    max_up_value = max(spin_up_VB)
+    max_up_index = spin_up_VB.index(max_up_value)
+    # fermi_up = up_average[max_up_index]
+    # print(max_up_value)
+    # print(fermi_up)
+    #
+    max_down_value = max(spin_down_VB)
+    max_down_index = spin_down_VB.index(max_down_value)
+    # fermi_down = down_average[max_down_index]
+    # print(max_down_value)
+    # print(fermi_down)
+
+    return max_up_value, max_down_value
+
+
+def plot_all(title, up, delta):
     #------------------ FONT_setup ----------------------
     font = {'family' : 'Arial',
         'color'  : 'black',
@@ -52,32 +120,34 @@ def change_job_title(title):
     #--------------------- PLOTs ------------------------
     axe = ax[0, 0]
     axe.axhline(y=0, xmin=0, xmax=1,linestyle= '--',linewidth=0.5,color='0.5')
+    axe.axhline(y=0, xmin=0, xmax=1, linestyle=':', linewidth=3, color='blue')
     for i in xtick[1:-1]:
         axe.axvline(x=i, ymin=0, ymax=1,linestyle= '--',linewidth=0.5,color='0.5')
     colormaps='blue'
-    axe.plot(datas[:,0],datas[:,1:],linewidth=1.0,color=colormaps)
+    axe.plot(datas[:,0],datas[:,1:]-up,linewidth=1.0,color=colormaps)
   #  axe.set_ylabel(r'$\mathrm{E} - \mathrm{E_f}$ (eV)',fontdict=font)
     axe.set_ylabel(r'$\mathrm{E}$ (eV)',fontdict=font)
     axe.set_xticks(xtick)
     axe.set_xticklabels(group_labels, rotation=0,fontsize=font['size']-2,fontname=font['family'])
     axe.set_xlim((xtick[0], xtick[-1]))
-    axe.axis(ymin=-5, ymax=0) # set y limits manually
-    axe.set_yticks(range(-5,0))
+    axe.axis(ymin=-2, ymax=2) # set y limits manually
+    axe.set_yticks(range(-2,2))
     axe.set_title('Band Structure (Up)', fontsize=font['size'])
 
     axi = ax[1, 0]
     axi.axhline(y=0, xmin=0, xmax=1,linestyle= '--',linewidth=0.5,color='0.5')
+    axi.axhline(y=delta, xmin=0, xmax=1, linestyle=':', linewidth=3, color='orange')
     for j in xtick[1:-1]:
         axi.axvline(x=j, ymin=0, ymax=1,linestyle= '--',linewidth=0.5,color='0.5')
     colormaps='blue'
-    axi.plot(data2[:,0],data2[:,1:],linewidth=1.0,color=colormaps)
+    axi.plot(data2[:,0],data2[:,1:]-up,linewidth=1.0,color=colormaps)
  #   axi.set_ylabel(r'$\mathrm{E} - \mathrm{E_f}$ (eV)',fontdict=font)
     axi.set_ylabel(r'$\mathrm{E}$ (eV)',fontdict=font)
     axi.set_xticks(xtick)
     axi.set_xticklabels(group_labels, rotation=0,fontsize=font['size']-2,fontname=font['family'])
     axi.set_xlim((xtick[0], xtick[-1]))
-    axi.axis(ymin=-5, ymax=0) # set y limits manually
-    axi.set_yticks(range(-5,0))
+    axi.axis(ymin=-2, ymax=2) # set y limits manually
+    axi.set_yticks(range(-2,2))
     axi.set_title('Band Structure (Down)', fontsize=font['size'])
 
     def readfile2(filename):
@@ -102,30 +172,36 @@ def change_job_title(title):
     # x2, y2 = readfile10(np.loadtxt("PDOS_SUM_UP.dat"))
 
     ax1  = ax[0, 1]
-    ax1.plot(y1, x1, label = "Spin up", linewidth=1.0)
-    ax1.plot(y2, x1, label = "Spin down", linewidth=1.0)
+    ax1.plot(y1, x1-up, label = "Spin up", linewidth=1.0)
+    ax1.plot(y2, x1-up, label = "Spin down", linewidth=1.0)
     # plt.ylabel('Energy (eV)')
     # plt.xlabel('', rotation=0,fontsize=font['size']-2,fontname=font['family'])
     # plt.ylim(-6,0)
-    ax1.axis(ymin=-5, ymax=0)
+    ax1.axis(ymin=-2, ymax=2)
     ax1.axis(xmin=-100,xmax=100)
     ax1.axvline(x=0, color = "black", ls= ":")
     legend = ax1.legend(shadow=True, fontsize=font['size']-4)
     ax1.set_title('Density of States', fontsize=font['size'])
     ax1.get_yaxis().set_visible(False)
 
+    ax1.hlines(y=0, xmin=0, xmax=100, linestyle=':', linewidth=3, color='blue')
+    ax1.hlines(y=delta, xmin=-100, xmax=0, linestyle=':', linewidth=3, color='orange')
+
     ax2 = ax[1,1]
-    ax2.plot(y1, x1, label = "Spin up", linewidth=1.0)
-    ax2.plot(y2, x1, label = "Spin down", linewidth=1.0)
+    ax2.plot(y1, x1-up, label = "Spin up", linewidth=1.0)
+    ax2.plot(y2, x1-up, label = "Spin down", linewidth=1.0)
     # plt.ylabel('Energy (eV)')
     # plt.xlabel('', rotation=0,fontsize=font['size']-2,fontname=font['family'])
     # plt.ylim(-6,0)
-    ax2.axis(ymin=-5, ymax=0)
+    ax2.axis(ymin=-2, ymax=2)
     ax2.axis(xmin=-100,xmax=100)
     ax2.axvline(x=0, color = "black", ls= ":")
     legend = ax2.legend(shadow=True, fontsize=font['size']-4)
     ax2.set_title('Density of States', fontsize=font['size'])
     ax2.get_yaxis().set_visible(False)
+
+    ax2.hlines(y=0, xmin=0, xmax=100, linestyle=':', linewidth=3, color='blue')
+    ax2.hlines(y=delta, xmin=-100, xmax=0, linestyle=':', linewidth=3, color='orange')
 
     fig = plt.gcf()
     plt.rcParams["font.family"] = "Arial"
@@ -134,4 +210,7 @@ def change_job_title(title):
     plt.savefig(title+'.png',dpi= 300)
 
 if __name__ == "__main__":
-    change_job_title(sys.argv[1])
+    up, down = get_fermi()
+    delta = down-up
+    plot_all(sys.argv[1], up, delta)
+    # plot_all("acc", up, delta)
