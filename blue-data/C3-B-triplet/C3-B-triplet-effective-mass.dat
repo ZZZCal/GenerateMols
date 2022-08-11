@@ -1,0 +1,4 @@
+/lustre03/project/6037349/zzzchem/My_ENV/lib/python3.8/site-packages/pymatgen/electronic_structure/boltztrap.py:60: FutureWarning: which is deprecated; use which in shutil instead.
+shutil.which has been available since Python 3.3. This will be removed in v2023.
+  which("x_trans"),
+ERROR: System is metallic!

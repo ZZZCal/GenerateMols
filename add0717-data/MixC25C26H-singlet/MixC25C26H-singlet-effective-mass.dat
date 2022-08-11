@@ -1,0 +1,41 @@
+/lustre03/project/6037349/zzzchem/My_ENV/lib/python3.8/site-packages/pymatgen/electronic_structure/boltztrap.py:60: FutureWarning: which is deprecated; use which in shutil instead.
+shutil.which has been available since Python 3.3. This will be removed in v2023.
+  which("x_trans"),
+Indirect band gap: 1.808 eV
+Direct band gap: 1.823 eV
+  Up:
+    k-point: [0.00, 0.00, 0.00]
+    k-point indices: 0, 59
+    Band indices: 337, 338
+  Down:
+    k-point: [0.00, 0.00, 0.00]
+    k-point indices: 0, 59
+    Band indices: 337, 338
+
+Valence band maximum:
+  Energy: -3.000 eV
+  k-point: [0.00, 0.00, 0.00]
+  k-point location: \GAMMA
+  k-point indices: 0, 59
+  Band indices: 337(Up), 337(Down)
+
+Conduction band minimum:
+  Energy: -1.191 eV
+  k-point: [0.50, 0.00, 0.00]
+  k-point location: X
+  k-point indices: 9, 10
+  Band indices: 338(Up), 338(Down)
+
+Using parabolic fitting of the band edges
+
+Hole effective masses:
+  m_h: -0.797 | band 337 (up) | [0.00, 0.00, 0.00] (\GAMMA) -> [0.50, 0.00, 0.00] (X)
+  m_h: -0.797 | band 337 (up) | [0.00, 0.00, 0.00] (\GAMMA) -> [0.00, 0.50, 0.00] (Y)
+  m_h: -0.797 | band 337 (down) | [0.00, 0.00, 0.00] (\GAMMA) -> [0.50, 0.00, 0.00] (X)
+  m_h: -0.797 | band 337 (down) | [0.00, 0.00, 0.00] (\GAMMA) -> [0.00, 0.50, 0.00] (Y)
+
+Electron effective masses:
+  m_e: 0.651 | band 338 (up) | [0.50, 0.00, 0.00] (X) -> [0.00, 0.00, 0.00] (\GAMMA)
+  m_e: 4.771 | band 338 (up) | [0.50, 0.00, 0.00] (X) -> [0.72, 0.28, 0.00] (H_1)
+  m_e: 0.651 | band 338 (down) | [0.50, 0.00, 0.00] (X) -> [0.00, 0.00, 0.00] (\GAMMA)
+  m_e: 4.771 | band 338 (down) | [0.50, 0.00, 0.00] (X) -> [0.72, 0.28, 0.00] (H_1)

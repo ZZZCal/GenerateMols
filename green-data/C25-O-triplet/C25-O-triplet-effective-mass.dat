@@ -1,0 +1,38 @@
+/lustre03/project/6037349/zzzchem/My_ENV/lib/python3.8/site-packages/pymatgen/electronic_structure/boltztrap.py:60: FutureWarning: which is deprecated; use which in shutil instead.
+shutil.which has been available since Python 3.3. This will be removed in v2023.
+  which("x_trans"),
+Direct band gap: 0.626 eV
+  Up:
+    k-point: [0.50, 0.00, 0.00]
+    k-point indices: 9, 10
+    Band indices: 335, 336
+  Down:
+    k-point: [0.50, 0.00, 0.00]
+    k-point indices: 9, 10
+    Band indices: 335, 336
+
+Valence band maximum:
+  Energy: -3.477 eV
+  k-point: [0.50, 0.00, 0.00]
+  k-point location: X
+  k-point indices: 9, 10
+  Band indices: 335(Down)
+
+Conduction band minimum:
+  Energy: -2.900 eV
+  k-point: [0.50, 0.00, 0.00]
+  k-point location: X
+  k-point indices: 9, 10
+  Band indices: 336(Up)
+
+Using parabolic fitting of the band edges
+
+Hole effective masses:
+  m_h: -0.587 | band 335 (down) | [0.50, 0.00, 0.00] (X) -> [0.00, 0.00, 0.00] (\GAMMA)
+  m_h: -6.816 | band 335 (down) | [0.50, 0.00, 0.00] (X) -> [0.72, 0.28, 0.00] (H_1)
+
+Electron effective masses:
+  m_e: 9.616 | band 336 (up) | [0.50, 0.00, 0.00] (X) -> [0.00, 0.00, 0.00] (\GAMMA)
+/lustre03/project/6037349/zzzchem/My_ENV/lib/python3.8/site-packages/sumo/electronic_structure/effective_mass.py:157: RuntimeWarning: divide by zero encountered in double_scalars
+  eff_mass = (angstrom_to_bohr**2 / eV_to_hartree) / c
+  m_e: inf | band 336 (up) | [0.50, 0.00, 0.00] (X) -> [0.72, 0.28, 0.00] (H_1)
